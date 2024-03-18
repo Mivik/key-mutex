@@ -7,6 +7,8 @@
 //! It's a bit like [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API)
 //! when `V` is `()`.
 //!
+//! Tokio version is available behind `tokio` feature.
+//!
 //! # Example
 //!
 //! ```
