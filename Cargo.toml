@@ -1,0 +1,20 @@
+[package]
+name = "key-mutex"
+version = "0.1.0"
+edition = "2021"
+authors = ["Mivik <mivikq@gmail.com>"]
+description = "Access mutexes by key"
+keywords = ["lock", "mutex", "rwlock", "concurrent", "map"]
+categories = ["asynchronous", "concurrency"]
+license = "MIT"
+repository = "https://github.com/Mivik/key-mutex"
+
+[features]
+default = ["std"]
+std = ["dep:guardian"]
+tokio = ["dep:tokio"]
+
+[dependencies]
+dashmap = "5.5.3"
+guardian = { optional = true, version = "1.1.0" }
+tokio = { optional = true, version = "1.36.0", features = ["sync"] }
