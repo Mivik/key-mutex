@@ -35,9 +35,11 @@ mod empty;
 #[macro_use]
 mod inner;
 
+#[cfg(feature = "std")]
 pub mod std;
 #[cfg(feature = "tokio")]
 pub mod tokio;
 
 pub use empty::Empty;
+#[cfg(feature = "std")]
 pub use std::*;
