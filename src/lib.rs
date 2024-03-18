@@ -5,12 +5,13 @@
 //! guard is dropped AND [`Empty::is_empty`] returns `true`.
 //!
 //! It's a bit like [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API)
-//! when `V`` is `()`.
+//! when `V` is `()`.
 //!
 //! # Example
 //!
 //! ```
 //! use std::sync::Arc;
+//! use key_mutex::KeyMutex;
 //!
 //! fn main() {
 //!     let locks = KeyMutex::<u32, BTreeSet<String>>::new();
