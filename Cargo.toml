@@ -1,6 +1,6 @@
 [package]
 name = "key-mutex"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Mivik <mivikq@gmail.com>"]
 description = "Access mutexes by key"
