@@ -16,7 +16,7 @@ use tokio::sync::{
 decl_mutex_guard!(TokioOwnedMutexGuard);
 #[derive(Clone, Default)]
 pub struct KeyMutex<K: Eq + Hash, V>(LockMap<K, sync::Mutex<V>>);
-impl<K: Eq + Hash + Clone, V: Empty + Default> KeyMutex<K, V> {
+impl<K: Eq + Hash + Clone, V: Empty + Default + 'static> KeyMutex<K, V> {
     pub fn new() -> Self {
         Self(LockMap::new())
     }
@@ -41,7 +41,7 @@ impl<K: Eq + Hash + Clone, V: Empty + Default> KeyMutex<K, V> {
 decl_rwlock_guard!(TokioOwnedRwLockReadGuard, TokioOwnedRwLockWriteGuard);
 #[derive(Clone, Default)]
 pub struct KeyRwLock<K: Eq + Hash, V>(LockMap<K, sync::RwLock<V>>);
-impl<K: Eq + Hash + Clone, V: Empty + Default> KeyRwLock<K, V> {
+impl<K: Eq + Hash + Clone, V: Empty + Default + 'static> KeyRwLock<K, V> {
     pub fn new() -> Self {
         Self(LockMap::new())
     }
